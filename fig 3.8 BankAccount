@@ -1,0 +1,54 @@
+public class Account{
+	private String name;
+	private double balance;
+	
+	
+	public Account(String name, double balance)
+	{
+		this.name= name ;
+		if (balance>0.0)
+			this.balance=balance;
+	}
+	public void deposit(double depAmount){
+		if (depAmount>0.0)
+			balance=depAmount+balance;
+	}
+	
+	public void setName(String name)
+	{
+	this.name=name;
+	}
+	public String getName()
+	{
+		return name;
+	}
+	public void setBalance(double balance){
+		this.balance=balance;
+	}
+	public double getBalance()
+	{
+		return balance;
+	}
+}
+
+import java.util.Scanner;
+public class Accounttest{
+	public static void main(String[] args){
+		Account a1=new Account("Jane Green", 50.00);
+		Account a2=new Account("Jane Blue", -7.53);
+		
+	   System.out.printf("%s balance is $%.2f%n", a1.getName(), a1.getBalance());
+	   Scanner input= new Scanner(System.in);
+	   System.out.printf("Enter deposit amount for account 1");
+	   double depositAmmount=input.nextDouble();
+	   a1.deposit(depositAmmount);
+	   System.out.printf("%s balance : $%.2f%n",  a1.getName(), a1.getBalance());
+	    System.out.printf("%s balance : $%.2f%n",  a2.getName(), a2.getBalance());
+		   System.out.printf("Enter deposit amount for account 2");
+		    double depositammount=input.nextDouble();
+	     a2.deposit(depositammount);
+	   System.out.printf("%s balance is $%.2f%n", a2.getName(), a2.getBalance());		 
+		   }
+}
+
+
