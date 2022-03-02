@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class AccountTest {
+   public static void main(String[] args) {
+     int count=1;
+	 int result;
+	 int pass =0, fail=0;
+	 
+
+      Scanner input = new Scanner(System.in);
+      while(count<=10)
+	  {
+		  
+      System.out.println("Enter result(1=pass, 2=fail): "); // prompt
+	  result=input.nextInt();
+	  if (result==1)
+		  pass=pass+1;
+	  else
+		  fail=fail+1;
+	  count=count+1;
+	  }
+	   System.out.printf("pass=%d%n, fail=%d%n", pass, fail);
+	   if(pass>=8)
+       System.out.println("BONUS TO INSTRUCTOR");
+		
+   } 
+} 
